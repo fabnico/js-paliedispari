@@ -14,7 +14,9 @@ function isPalindrome(){
 }
 
 if(isPalindrome(userWord)){
+   check.innerHTML = "La parola è palindroma";
    console.log('La parola è palindroma');
 } else {
+   check.innerHTML = "La parola non è palindroma"
    console.log('La parola non è palindroma');
 }
