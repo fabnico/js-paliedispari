@@ -5,18 +5,20 @@ console.log('scelta : ', userMorra)
 var userNumber = parseInt(prompt("Scegli un numero da 1 a 5"));
 console.log('userNumber: ', userNumber)
 
-function aiNumber(){
-   var number = Math.floor(Math.random() * 5 ) + 1;
-   console.log('aiNumber ', number)
-   return number;
+function aiNumber(min, max){
+   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-var sum = userNumber + aiNumber();
-console.log('somma ',sum)
+var add = aiNumber(1,5)
+console.log(add)
 
-function evenOdd(){
+var somma = userNumber + add
+console.log(somma)
+
+
+function evenOdd(number){
    var result;
-   if(sum % 2 === 0){
+   if(number % 2 === 0){
       result = "pari";
    } else{
       result = "dispari";
@@ -25,7 +27,7 @@ function evenOdd(){
    return result;
 }
 
-if (evenOdd() == userMorra){
+if (evenOdd(somma) == userMorra){
    whoWin.innerHTML = "Hai vinto!"
 }else {
    whoWin.innerHTML = "Ha vinto il computer"
